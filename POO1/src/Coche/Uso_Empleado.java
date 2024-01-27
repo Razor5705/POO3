@@ -89,8 +89,7 @@ public class Uso_Empleado {
     for (Empleado empleado : Empleado) {
         System.out.println("Nombre: " + empleado.getNombre() + ", Sueldo: " + empleado.getSueldo());
 	        	
-	        	
-	 
+	
 	
 
     }
