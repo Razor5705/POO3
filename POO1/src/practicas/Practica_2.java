@@ -63,7 +63,7 @@ public class Practica_2 {
     @Override
     public void mostrarDetalles() {
         // Implementación del método
-    	
+    	 System.out.println(super.id +  " "  + super.nombre + " " + calcularSalario());
     }
 }
 
@@ -87,8 +87,8 @@ public class Practica_2 {
 
     @Override
     public void mostrarDetalles() {
-System.out.println();
-    }
+    	 System.out.println(super.id +  " " + super.nombre);   
+    	 }
 
 	public int getPeriodoContrato() {
 		return periodoContrato;
@@ -119,7 +119,7 @@ System.out.println();
 
     @Override
     public void mostrarDetalles() {
-        System.out.println();
+        System.out.println(super.id + " " + super.nombre);
     }
 
 	public int getPeriodoContrato() {
