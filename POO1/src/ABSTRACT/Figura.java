@@ -22,7 +22,7 @@ public class Figura {
         // Calcular y mostrar área del círculo
         JOptionPane.showMessageDialog(null, "El área del círculo es: " + circulo.calculararea());
 		
-	
+	 
 	
 	}
 
