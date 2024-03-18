@@ -1,14 +1,18 @@
 package NO_MORIRE;
 
+import java.awt.Color;
 import java.awt.Frame;
+import java.awt.ImageCapabilities;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.time.LocalTime;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 @SuppressWarnings("unused")
 public class UnJugador {
@@ -33,9 +37,10 @@ public class UnJugador {
     Razor64_ usuario =  new Razor64_(18, "defaultskin.png");
     JFrame frame = new JFrame();
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.setSize(400, 400);
-    Frame frame1 = new Frame("Block Breaker");
-    frame1.setSize(400, 400);
+    frame.setSize(800, 600);
+    JPanel panel = new JPanel();
+    
+   
 
     int vida = 20;
     
@@ -83,8 +88,7 @@ public class UnJugador {
 	                	 System.out.println("Movimiento hacia la izquierda");
 	                        break;
 	                        
-					default:
-						throw new IllegalArgumentException("Unexpected value: " );
+			
 					}
 				}
 				
@@ -110,8 +114,74 @@ public class UnJugador {
 	                
 				
 			});
+			
+
+			
+			frame.addMouseListener(new MouseListener() {
+				
+				@Override
+			    public void mouseClicked(MouseEvent e) {
+			        System.out.println("Mouse clicked at (" + e.getX() + ", " + e.getY() + ")");
+			    }
+
+			    @Override
+			    public void mousePressed(MouseEvent e) {
+			        System.out.println("Mouse pressed at (" + e.getX() + ", " + e.getY() + ")");
+			    }
+
+			    @Override
+			    public void mouseReleased(MouseEvent e) {
+			        System.out.println("Mouse released at (" + e.getX() + ", " + e.getY() + ")");
+			    }
+
+			    @Override
+			    public void mouseEntered(MouseEvent e) {
+			        System.out.println("Mouse entered at (" + e.getX() + ", " + e.getY() + ")");
+			    }
+
+			    @Override
+			    public void mouseExited(MouseEvent e) {
+			        System.out.println("Mouse exited at (" + e.getX() + ", " + e.getY() + ")");
+			    }
+			});
+			
+			frame.addKeyListener(new KeyListener() {
+
+				@Override
+				public void keyTyped(KeyEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+
+				@Override
+				public void keyPressed(KeyEvent e) {
+					// TODO Auto-generated method stub
+					switch (e.getKeyCode()) {
+					case KeyEvent.VK_E: 
+						usuario.abrir();
+						
+						
+						break;
+					
+                  case KeyEvent.VK_ESCAPE: {
+						
+						usuario.cerrar();
+					}
+
+					}
+				}
+
+				@Override
+				public void keyReleased(KeyEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+			});
+		
+	        frame.getContentPane().setBackground(Color.YELLOW); 
+	        frame.add(panel);
 	        frame.setVisible(true);
-	        frame1.setVisible(true);
       
 	        
           
